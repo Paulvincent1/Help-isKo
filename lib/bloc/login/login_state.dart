@@ -1,15 +1,17 @@
-abstract class LoginState{}
+abstract class LoginState {}
 
-class LoginInitial extends LoginState{}
+class LoginActionState extends LoginState {}
 
-class LoginLoading extends LoginState{}
+class LoginInitial extends LoginState {}
 
-class LoginSuccess extends LoginState{}
+class LoginLoading extends LoginState {}
 
-class LoginFailure extends LoginState{
+class LoginSuccess extends LoginState {}
+
+class LoginFailure extends LoginState {
   final String error;
 
-  LoginFailure({
-    required this.error
-  });
+  LoginFailure({required this.error});
 }
+
+class LoginGetStartedNavigationState extends LoginActionState {}

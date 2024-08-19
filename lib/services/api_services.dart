@@ -4,13 +4,10 @@ import 'package:help_isko/services/global.dart';
 import 'package:http/http.dart' as http;
 
 class ApiServices{
-  final String apiUrl;
 
-  ApiServices({required this.apiUrl});
-
-  Future<Map<String, dynamic>> login(String email, String password) async {
+  static Future<Map<String, dynamic>> login(String email, String password) async {
     final response = await http.post(
-      Uri.parse('$baseUrl/api/login'),
+      Uri.parse('$baseUrl/login'),
       headers: {'Content-Type': 'application/json'},
       body: jsonEncode(<String, String>{
         'email': email,
