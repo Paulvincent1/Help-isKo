@@ -3,10 +3,12 @@ import 'package:ionicons/ionicons.dart';
 
 class MyIconButtonAppBar extends StatefulWidget {
   final Color iconColor;
+  final String selectedRole;
 
   const MyIconButtonAppBar({
     super.key,
     this.iconColor = const Color(0xFF3B3B3B),
+    required this.selectedRole
   });
 
   @override
@@ -25,7 +27,8 @@ class _MyIconButtonAppBarState extends State<MyIconButtonAppBar> {
         ),
         const SizedBox(width: 5),
         Icon(
-          Ionicons.document_outline,
+          widget.selectedRole == 'Professor' ?
+          Ionicons.reader_outline : Ionicons.document_outline,
           size: 28,
           color: widget.iconColor
         ),

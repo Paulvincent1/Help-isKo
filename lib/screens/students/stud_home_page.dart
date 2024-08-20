@@ -66,6 +66,7 @@ class _StudHomePageState extends State<StudHomePage> {
               delegate: SliverChildListDelegate([
                 const MyAppBar(
                   name: 'John Brandon',
+                  selectedRole: 'Student',
                 )
               ]),
             ),
@@ -74,7 +75,7 @@ class _StudHomePageState extends State<StudHomePage> {
             ),
             SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
+                padding: const EdgeInsets.only(top: 25, left: 20, right: 20),
                 child: Text(
                   'Announcement',
                   style: GoogleFonts.nunito(

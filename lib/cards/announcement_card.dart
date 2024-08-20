@@ -19,11 +19,10 @@ class AnnouncementCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
-      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+      margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: const Color(0x303B3B3B)),
         color: const Color(0xFFA3D9A5),
         boxShadow: [
           BoxShadow(

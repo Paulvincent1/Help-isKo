@@ -160,6 +160,7 @@ class _StudProfilePageState extends State<StudProfilePage> {
                                 const Spacer(),
                                 const MyIconButtonAppBar(
                                   iconColor: Color(0xFFFCFCFC),
+                                  selectedRole: 'Student',
                                 )
                               ],
                             ),

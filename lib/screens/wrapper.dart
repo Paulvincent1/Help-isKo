@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:help_isko/screens/professors/prof_home_page.dart';
+import 'package:help_isko/screens/professors/prof_profile_page.dart';
+import 'package:help_isko/screens/professors/prof_request_duties_page.dart';
 import 'package:help_isko/screens/students/stud_duties_page.dart';
 import 'package:help_isko/screens/students/stud_home_page.dart';
 import 'package:help_isko/screens/students/stud_profile_page.dart';
@@ -33,6 +35,8 @@ class _WrapperState extends State<Wrapper> {
               children: widget.selectedRole == 'Professor' 
                 ? const [
                   ProfHomePage(),
+                  ProfRequestDutiesPage(),
+                  ProfProfilePage(),
                 ]
                 : const [
                   StudHomePage(),
@@ -46,15 +50,15 @@ class _WrapperState extends State<Wrapper> {
               bottom: 25,
               child: Container(
                 height: 80,
-                margin: const EdgeInsets.symmetric(horizontal: 25),
+                margin: const EdgeInsets.symmetric(horizontal: 15),
                 decoration: BoxDecoration(
                   border: Border.all(color: const Color(0x303B3B3B)),
                   borderRadius: BorderRadius.circular(50),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.2),
+                      color: Colors.black.withOpacity(0.1),
                         spreadRadius: 1,
-                        blurRadius: 10,
+                        blurRadius: 6,
                         offset: const Offset(0, 6)
                     )
                   ]
@@ -88,6 +92,38 @@ class _WrapperState extends State<Wrapper> {
                         selectedIndex = index;
                       });
                     },
+                  ),
+                ),
+              ),
+            ),
+            if(widget.selectedRole == 'Professor')
+            Positioned(
+              bottom: 125,
+              right: 15,
+              child: Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  border: Border.all(color: const Color(0x303B3B3B)),
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 5,
+                        offset: const Offset(0, 6)
+                    )
+                  ]
+                ),
+                child: GestureDetector(
+                  onTap: (){
+                    // log('Icon add is clikced');
+                  },
+                  child: const Icon(
+                    Icons.add_rounded,
+                    size: 40,
+                    color: Color(0xFF6BB577),
                   ),
                 ),
               ),

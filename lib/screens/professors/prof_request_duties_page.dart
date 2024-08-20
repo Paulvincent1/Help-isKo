@@ -3,14 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:help_isko/components/my_app_bar.dart';
 import 'package:ionicons/ionicons.dart';
 
-class StudDutiesPage extends StatefulWidget {
-  const StudDutiesPage({super.key});
+class ProfRequestDutiesPage extends StatefulWidget {
+  const ProfRequestDutiesPage({super.key});
 
   @override
-  State<StudDutiesPage> createState() => _StudDutiesPageState();
+  State<ProfRequestDutiesPage> createState() => _ProfRequestDutiesPageState();
 }
 
-class _StudDutiesPageState extends State<StudDutiesPage> {
+class _ProfRequestDutiesPageState extends State<ProfRequestDutiesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +21,13 @@ class _StudDutiesPageState extends State<StudDutiesPage> {
               delegate: SliverChildListDelegate([
                 const MyAppBar(
                   name: 'John Brandon',
-                  selectedRole: 'Student',
+                  selectedRole: 'Professor',
                 )
               ]),
             ),
             SliverLayoutBuilder(
               builder: (BuildContext context, constraints){
-                final scrolled = constraints.scrollOffset > 50;
+                final scrolled = constraints.scrollOffset > 0;
                 return SliverAppBar(
                   automaticallyImplyLeading: false,
                   pinned: true,
@@ -138,7 +138,7 @@ class _StudDutiesPageState extends State<StudDutiesPage> {
                               color: const Color(0xFF3B3B3B)
                             ),
                             duration: const Duration(milliseconds: 300),
-                            child: const Text('Available Duties'),
+                            child: const Text('Request for Duties'),
                           ),
                         ),
                       ],
@@ -146,6 +146,14 @@ class _StudDutiesPageState extends State<StudDutiesPage> {
                   ),
                 );
               },
+            ),
+            SliverToBoxAdapter(
+              child: Container(
+                height: 500,
+                decoration: BoxDecoration(
+                  color: Colors.black
+                ),
+              ),
             )
           ],
         ),

@@ -4,10 +4,12 @@ import 'package:help_isko/components/my_icon_button_app_bar.dart';
 
 class MyAppBar extends StatelessWidget {
   final String name;
+  final String selectedRole;
 
   const MyAppBar({
     super.key,
-    required this.name
+    required this.name,
+    required this.selectedRole
   });
 
   @override
@@ -47,7 +49,9 @@ class MyAppBar extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          const MyIconButtonAppBar()
+          MyIconButtonAppBar(
+            selectedRole: selectedRole,
+          )
         ],
       ),
     );
