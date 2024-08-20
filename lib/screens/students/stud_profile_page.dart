@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:help_isko/components/my_icon_button_app_bar.dart';
 import 'package:help_isko/components/profile_dropdown.dart';
-import 'package:help_isko/screens/students/stud_notif_page.dart';
 
 class StudProfilePage extends StatefulWidget {
   const StudProfilePage({super.key});
@@ -158,29 +158,9 @@ class _StudProfilePageState extends State<StudProfilePage> {
                                   ),
                                 ),
                                 const Spacer(),
-                                GestureDetector(
-                                  onTap: (){
-                                  },
-                                  child: const ImageIcon(
-                                    AssetImage('images/messenger.png'),
-                                    size: 20,
-                                    color: Color(0xFFFCFCFC),
-                                  ),
-                                ),
-                                const SizedBox(width: 10),
-                                GestureDetector(
-                                  onTap: (){
-                                    scrolled ? const Text('') : Navigator.push(
-                                      context, 
-                                      MaterialPageRoute(builder: (context) => const StudNotifPage())
-                                    );
-                                  },
-                                  child: const ImageIcon(
-                                    AssetImage('images/bell.png'),
-                                    size: 25,
-                                    color: Color(0xFFFCFCFC),
-                                  ),
-                                ),
+                                const MyIconButtonAppBar(
+                                  iconColor: Color(0xFFFCFCFC),
+                                )
                               ],
                             ),
                           ),
@@ -313,18 +293,21 @@ class _StudProfilePageState extends State<StudProfilePage> {
                       ],
                     ),
                     const Divider(color: Color(0x303B3B3B)),
+                    const SizedBox(height: 10),
                     const ProfileDropdown(
                       icon: Icons.person_rounded, 
                       color: Color(0xFF6F42C1),
                       title: 'Profile',
                       type: 'Profile',
                     ),
+                    const SizedBox(height: 20),
                     const ProfileDropdown(
                       icon: Icons.contact_page_rounded, 
                       color: Color(0xFFDC3545),
                       title: 'Contact',
                       type: 'Contact',
                     ),
+                    const SizedBox(height: 20),
                     const ProfileDropdown(
                       icon: Icons.location_on, 
                       color: Color(0xFF007BFF),

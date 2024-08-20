@@ -4,6 +4,7 @@ import 'package:help_isko/cards/stud_address_card.dart';
 import 'package:help_isko/cards/stud_contact_card.dart';
 import 'package:help_isko/cards/stud_profile_card.dart';
 import 'package:help_isko/cards/stud_renewal_card.dart';
+import 'package:ionicons/ionicons.dart';
 
 class ProfileDropdown extends StatefulWidget {
   final IconData icon;
@@ -72,8 +73,8 @@ class _ProfileDropdownState extends State<ProfileDropdown> with SingleTickerProv
               ),
               const Spacer(),
               Icon(
-                _isDropDown ? Icons.arrow_drop_up : Icons.arrow_drop_down,
-                size: 50, 
+                _isDropDown ? Ionicons.caret_up : Ionicons.caret_down,
+                size: 30, 
                 color: const Color(0xFF6BB577)
               )
             ],

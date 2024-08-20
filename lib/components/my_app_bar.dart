@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:help_isko/components/my_icon_button_app_bar.dart';
 
 class MyAppBar extends StatelessWidget {
   final String name;
@@ -46,23 +47,7 @@ class MyAppBar extends StatelessWidget {
             ],
           ),
           const Spacer(),
-          const ImageIcon(
-            AssetImage('images/messenger.png'),
-            size: 20,
-          ),
-          const SizedBox(width: 10),
-          GestureDetector(
-            onTap: (){
-              // Navigator.push(
-              //   context, 
-              //   MaterialPageRoute(builder: (context) => const StudentNotificationPage())
-              // );
-            },
-            child: const ImageIcon(
-              AssetImage('images/bell.png'),
-              size: 25,
-            ),
-          ),
+          const MyIconButtonAppBar()
         ],
       ),
     );

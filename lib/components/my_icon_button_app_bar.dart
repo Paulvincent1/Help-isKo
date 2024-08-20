@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
+
+class MyIconButtonAppBar extends StatefulWidget {
+  final Color iconColor;
+
+  const MyIconButtonAppBar({
+    super.key,
+    this.iconColor = const Color(0xFF3B3B3B),
+  });
+
+  @override
+  State<MyIconButtonAppBar> createState() => _MyIconButtonAppBarState();
+}
+
+class _MyIconButtonAppBarState extends State<MyIconButtonAppBar> {
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          Ionicons.chatbubble_ellipses_outline,
+          size: 28,
+          color: widget.iconColor
+        ),
+        const SizedBox(width: 5),
+        Icon(
+          Ionicons.document_outline,
+          size: 28,
+          color: widget.iconColor
+        ),
+        const SizedBox(width: 2.5),
+        Icon(
+          Ionicons.notifications_outline,
+          size: 29,
+          color: widget.iconColor
+        ),
+      ],
+    );
+  }
+}
