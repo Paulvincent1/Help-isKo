@@ -29,14 +29,14 @@ class DutiesCard extends StatelessWidget {
         color: const Color(0xFFFCFCFC),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: const Color(0x303B3B3B)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            offset: const Offset(0.0, 10.0),
-            blurRadius: 10.0,
-            spreadRadius: -6.0
-          ),
-        ],
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: Colors.black.withOpacity(0.2),
+        //     offset: const Offset(0.0, 10.0),
+        //     blurRadius: 10.0,
+        //     spreadRadius: -6.0
+        //   ),
+        // ],
       ),
       child: Stack(
         clipBehavior: Clip.none,

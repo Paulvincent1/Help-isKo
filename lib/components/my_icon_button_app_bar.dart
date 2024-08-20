@@ -21,21 +21,21 @@ class _MyIconButtonAppBarState extends State<MyIconButtonAppBar> {
     return Row(
       children: [
         Icon(
-          Ionicons.chatbubble_ellipses_outline,
-          size: 28,
+          widget.selectedRole == 'Professor' ?
+          Ionicons.reader_outline : Ionicons.document_outline,
+          size: 25,
           color: widget.iconColor
         ),
         const SizedBox(width: 5),
         Icon(
-          widget.selectedRole == 'Professor' ?
-          Ionicons.reader_outline : Ionicons.document_outline,
-          size: 28,
+          Ionicons.chatbubble_ellipses_outline,
+          size: 25,
           color: widget.iconColor
         ),
         const SizedBox(width: 2.5),
         Icon(
           Ionicons.notifications_outline,
-          size: 29,
+          size: 25,
           color: widget.iconColor
         ),
       ],

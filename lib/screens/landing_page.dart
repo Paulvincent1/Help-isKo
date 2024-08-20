@@ -48,11 +48,14 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   bool handleBackPressed(){
-    setState(() {
-      isTextSelected = false;
-      selectedRole = null;
-    });
-    return false;
+    if(isTextSelected || selectedRole != null){
+      setState(() {
+        isTextSelected = false;
+        selectedRole = null;
+      });
+      return false;
+    }
+    return true;
   }
 
   @override

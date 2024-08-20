@@ -24,14 +24,6 @@ class AnnouncementCard extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
         color: const Color(0xFFA3D9A5),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            offset: const Offset(0.0, 10.0),
-            blurRadius: 10.0,
-            spreadRadius: -6.0
-          )
-        ]
       ),
       child: Row(
         children: [
