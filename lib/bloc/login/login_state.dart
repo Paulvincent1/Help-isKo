@@ -14,4 +14,16 @@ class LoginFailure extends LoginState {
   LoginFailure({required this.error});
 }
 
+class LoginSuccessNavigationState extends LoginActionState {}
+
+class LoginAnimationGetStartedInProgressState extends LoginState {}
+
+class LoginAnimationGetStartedCompleteState extends LoginState {}
+
 class LoginGetStartedNavigationState extends LoginActionState {}
+
+class LoginSelectedProfessorRoleState extends LoginState {}
+
+class LoginSelectedStudentRoleState extends LoginState {}
+
+class LoginGoBackRoleState extends LoginState {}
