@@ -18,8 +18,6 @@ class _LandingPageState extends State<LandingPage> {
   String? selectedRole;
   bool isTextSelected = false;
 
-
-
   @override
   void dispose() {
     idNumberController.dispose();
@@ -32,28 +30,34 @@ class _LandingPageState extends State<LandingPage> {
     return Scaffold(
       body: SafeArea(
         child: BlocConsumer<LoginBloc, LoginState>(
-          listenWhen: (previous, current) => current is LoginActionState,
           listener: (context, state) {
             // TODO: implement listener
-            Navigator.push(
-                context,
-                PageRouteBuilder(
-                    transitionDuration: const Duration(milliseconds: 900),
-                    pageBuilder: (context, animation, secondaryAnimation) =>
-                        Wrapper(selectedRole: selectedRole!),
-                    transitionsBuilder:
-                        (context, animation, secondaryAnimation, child) {
-                      const begin = Offset(1, 0);
-                      const end = Offset.zero;
-                      const curve = Curves.easeInOut;
-                      var tween = Tween(begin: begin, end: end)
-                          .chain(CurveTween(curve: curve));
-                      var offsetAnimation = animation.drive(tween);
-                      return SlideTransition(
-                        position: offsetAnimation,
-                        child: child,
-                      );
-                    }));
+            if (state is LoginFailure) {
+              ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text('Invalid email or password'),
+                duration: Duration(seconds: 2),
+              ));
+            } else if (state is LoginSuccessNavigationState) {
+              Navigator.push(
+                  context,
+                  PageRouteBuilder(
+                      transitionDuration: const Duration(milliseconds: 900),
+                      pageBuilder: (context, animation, secondaryAnimation) =>
+                          Wrapper(selectedRole: selectedRole!),
+                      transitionsBuilder:
+                          (context, animation, secondaryAnimation, child) {
+                        const begin = Offset(1, 0);
+                        const end = Offset.zero;
+                        const curve = Curves.easeInOut;
+                        var tween = Tween(begin: begin, end: end)
+                            .chain(CurveTween(curve: curve));
+                        var offsetAnimation = animation.drive(tween);
+                        return SlideTransition(
+                          position: offsetAnimation,
+                          child: child,
+                        );
+                      }));
+            }
           },
           buildWhen: (previous, current) => current is! LoginActionState,
           builder: (context, state) {

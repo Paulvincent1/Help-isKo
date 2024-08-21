@@ -62,6 +62,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
                 ['emergency_contact_number'],
             profile_img: response['user']['profile_img'],
           );
+          var val = await Storage.getField("profile_img");
+          print(val);
 
           emit(LoginSuccessNavigationState());
         }
