@@ -31,8 +31,10 @@ class _LandingPageState extends State<LandingPage> {
       body: SafeArea(
         child: BlocConsumer<LoginBloc, LoginState>(
           listener: (context, state) {
+            //updated
             // TODO: implement listener
             if (state is LoginFailure) {
+              print('failed');
               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                 content: Text('Invalid email or password'),
                 duration: Duration(seconds: 2),
